@@ -20,7 +20,7 @@ class CreateSeancesTable extends Migration
             $table->date('date_fin');
             $table->string('horaire');
             $table->foreignId('moniteur_id')->constrained('moniteurs')->onDelete('cascade');
-            $table->foreignId('candidat_id')->constrained('condidats')->onDelete('cascade');
+            $table->foreignId('condidat_id')->constrained('condidats')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -14,7 +14,7 @@ class Payment extends Model
         'date_paiement',
         'reste',
         'permis_id',
-        'candidat_id',
+        'condidat_id',
     ];
 
     public function permis()
@@ -22,7 +22,7 @@ class Payment extends Model
         return $this->belongsTo(Permis::class);
     }
 
-    public function candidat()
+    public function condidat()
     {
         return $this->belongsTo(Condidat::class);
     }

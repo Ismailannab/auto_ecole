@@ -29,11 +29,14 @@
                                         <td>{{ $payment->date_paiement }}</td>
                                         <td>{{ $payment->reste }}</td>
                                         <td>{{ $payment->permis->type }}</td>
-                                        <td>{{ $payment->candidat->cin }}</td>
+                                        <td>{{ $payment->condidat->cin }}</td>
                                         <td>
-                                            <a href="{{ route('payments.show', $payment->id) }}" class="btn btn-sm btn-info">View</a>
-                                            <a href="{{ route('payments.edit', $payment->id) }}" class="btn btn-sm btn-warning">Edit</a>
-                                            <form action="{{ route('payments.destroy', $payment) }}" method="POST" style="display: inline;">
+                                            <a href="{{ route('payments.show', $payment->id) }}"
+                                                class="btn btn-sm btn-info">View</a>
+                                            <a href="{{ route('payments.edit', $payment->id) }}"
+                                                class="btn btn-sm btn-warning">Edit</a>
+                                            <form action="{{ route('payments.destroy', $payment) }}" method="POST"
+                                                style="display: inline;">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger">Delete</button>

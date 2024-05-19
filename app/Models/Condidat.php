@@ -35,7 +35,7 @@ class Condidat extends Model
     
     public function seances()
     {
-        return $this->hasMany(Seance::class, 'candidat_id', 'id');
+        return $this->hasMany(Seance::class, 'condidat_id', 'id');
     }
     
     

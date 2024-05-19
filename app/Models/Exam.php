@@ -12,13 +12,13 @@ class Exam extends Model
     protected $fillable = [
         'type',
         'exam_date',
-        'candidat_id',
+        'condidat_id',
     ];
 
     
-    public function candidat()
+    public function condidat()
     {
-        return $this->belongsTo(Condidat::class,'candidat_id');
+        return $this->belongsTo(Condidat::class,'condidat_id');
     }
 
     public function resultats()

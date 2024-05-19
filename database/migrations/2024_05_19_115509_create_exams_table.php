@@ -17,7 +17,7 @@ class CreateExamsTable extends Migration
             $table->id();
             $table->string('type');
             $table->date('exam_date');
-            $table->foreignId('candidat_id')->constrained('condidats')->onDelete('cascade');
+            $table->foreignId('condidat_id')->constrained('condidats')->onDelete('cascade');
             $table->timestamps();
         });
     }

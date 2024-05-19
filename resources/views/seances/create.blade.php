@@ -36,8 +36,8 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="candidat_id">Candidat:</label>
-                <select name="candidat_id" id="candidat_id" class="form-control">
+                <label for="condidat_id">Condidat:</label>
+                <select name="condidat_id" id="condidat_id" class="form-control">
                     @foreach($condidats as $condidat)
                         <option value="{{ $condidat->id }}">{{ $condidat->cin}}</option>
                     @endforeach

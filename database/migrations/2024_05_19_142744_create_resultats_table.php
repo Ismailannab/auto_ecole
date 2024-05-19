@@ -18,7 +18,7 @@ class CreateResultatsTable extends Migration
             $table->string('resultat');
             $table->foreignId('exam_id')->constrained('exams')->onDelete('cascade');
             $table->foreignId('permis_id')->constrained('permis')->onDelete('cascade');
-            $table->foreignId('candidat_id')->constrained('condidats')->onDelete('cascade');
+            $table->foreignId('condidat_id')->constrained('condidats')->onDelete('cascade');
             $table->timestamps();
         });
     }

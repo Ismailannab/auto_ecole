@@ -9,7 +9,7 @@
                     <th>Resultat</th>
                     <th>Exam</th>
                     <th>Permis</th>
-                    <th>Candidat</th>
+                    <th>Condidat</th>
                     <th>Actions</th>
                 </tr>
             </thead>

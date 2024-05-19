@@ -13,7 +13,7 @@
                                 <tr>
                                     <th>Type</th>
                                     <th>Date</th>
-                                    <th>Candidate</th>
+                                    <th>Condidate</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -22,7 +22,7 @@
                                     <tr>
                                         <td>{{ $exam->type }}</td>
                                         <td>{{ $exam->exam_date }}</td>
-                                        <td>{{ $exam->candidat->cin }} </td>
+                                        <td>{{ $exam->condidat->cin }} </td>
                                         <td>
                                             <a href="{{ route('exams.show', $exam) }}" class="btn btn-primary">View</a>
                                             <a href="{{ route('exams.edit', $exam) }}" class="btn btn-secondary">Edit</a>

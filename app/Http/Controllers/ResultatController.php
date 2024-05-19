@@ -30,7 +30,7 @@ class ResultatController extends Controller
             'resultat' => 'required|string',
             'exam_id' => 'required|exists:exams,id',
             'permis_id' => 'required|exists:permis,id',
-            'candidat_id' => 'required|exists:candidats,id'
+            'condidat_id' => 'required|exists:condidats,id'
         ]);
 
         Resultat::create($request->all());
@@ -41,7 +41,7 @@ class ResultatController extends Controller
 
     public function show(Resultat $resultat)
     {
-        $resultat->load(['exam', 'permis', 'candidat']);
+        $resultat->load(['exam', 'permis', 'condidat']);
         return view('resultats.show', compact('resultat'));
     }
 
@@ -49,8 +49,8 @@ class ResultatController extends Controller
     {
         $exams = Exam::all();
         $permis = Permis::all();
-        $candidats = Candidat::all();
-        return view('resultats.edit', compact('resultat', 'exams', 'permis', 'candidats'));
+        $condidats = Condidat::all();
+        return view('resultats.edit', compact('resultat', 'exams', 'permis', 'condidats'));
     }
 
     public function update(Request $request, Resultat $resultat)
@@ -59,7 +59,7 @@ class ResultatController extends Controller
             'resultat' => 'required|string',
             'exam_id' => 'required|exists:exams,id',
             'permis_id' => 'required|exists:permis,id',
-            'candidat_id' => 'required|exists:candidats,id'
+            'condidat_id' => 'required|exists:condidats,id'
         ]);
 
         $resultat->update($request->all());

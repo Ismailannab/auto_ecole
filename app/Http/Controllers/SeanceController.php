@@ -11,7 +11,7 @@ class SeanceController extends Controller
 {
     public function index()
     {
-        $seances = Seance::with('moniteur', 'candidat')->get();
+        $seances = Seance::with('moniteur', 'condidat')->get();
         return view('seances.index', compact('seances'));
     }
 
@@ -29,7 +29,7 @@ class SeanceController extends Controller
             'date_fin' => 'required|date|after:date_debut',
             'horaire' => 'required|string',
             'moniteur_id' => 'required|exists:moniteurs,id',
-            'candidat_id' => 'required|exists:condidats,id'
+            'condidat_id' => 'required|exists:condidats,id'
         ]);
     
         Seance::create([
@@ -38,7 +38,7 @@ class SeanceController extends Controller
             'date_fin' => $request->date_fin,
             'horaire' => $request->horaire,
             'moniteur_id' => $request->moniteur_id,
-            'candidat_id' => $request->candidat_id
+            'condidat_id' => $request->condidat_id
         ]);
     
         return redirect()->route('seances.index')
@@ -48,7 +48,7 @@ class SeanceController extends Controller
 
     public function show(Seance $seance)
     {
-        $seance->load('moniteur', 'candidat');
+        $seance->load('moniteur', 'condidat');
         return view('seances.show', compact('seance'));
     }
 
@@ -67,7 +67,7 @@ class SeanceController extends Controller
             'date_fin' => 'date|after:date_debut',
             'horaire' => 'string',
             'moniteur_id' => 'exists:moniteurs,id',
-            'candidat_id' => 'exists:condidats,id'
+            'condidat_id' => 'exists:condidats,id'
         ]);
 
         $seance->update($request->all());

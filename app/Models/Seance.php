@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Seance extends Model
 {
     protected $fillable = [
-        'type_seance', 'date_debut', 'date_fin', 'horaire', 'moniteur_id', 'candidat_id'
+        'type_seance', 'date_debut', 'date_fin', 'horaire', 'moniteur_id', 'condidat_id'
     ];
 
     public function moniteur()
@@ -15,8 +15,8 @@ class Seance extends Model
         return $this->belongsTo(Moniteur::class, 'moniteur_id', 'id');
     }
 
-    public function candidat()
+    public function condidat()
     {
-        return $this->belongsTo(Condidat::class, 'candidat_id', 'id');
+        return $this->belongsTo(Condidat::class, 'condidat_id', 'id');
     }
 }

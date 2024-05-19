@@ -19,10 +19,10 @@
                                 <input type="date" name="exam_date" id="exam_date" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="candidat_id">Candidate:</label>
-                                <select name="candidat_id" id="candidat_id" class="form-control">
-                                    @foreach ($candidates as $candidat)
-                                        <option value="{{ $candidat->id }}">{{ $candidat->cin }} </option>
+                                <label for="condidat_id">Condidate:</label>
+                                <select name="condidat_id" id="condidat_id" class="form-control">
+                                    @foreach ($condidates as $condidat)
+                                        <option value="{{ $condidat->id }}">{{ $condidat->cin }} </option>
                                     @endforeach
                                 </select>
                             </div>

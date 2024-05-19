@@ -15,7 +15,7 @@
                     <th>horaire</th>
 
                     <th>Moniteur</th>
-                    <th>Candidat</th>
+                    <th>Condidat</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -27,7 +27,7 @@
                         <td>{{ $seance->date_fin }}</td>
                         <td>{{ $seance->horaire }}</td>
                         <td>{{ $seance->moniteur->nom_complet }}</td>
-                        <td>{{ $seance->candidat->cin }}</td>
+                        <td>{{ $seance->condidat->cin }}</td>
                         <td>
                             <a href="{{ route('seances.show', $seance) }}" class="btn btn-info">View</a>
                             <a href="{{ route('seances.edit', $seance) }}" class="btn btn-warning">Edit</a>

@@ -10,14 +10,14 @@ class ExamController extends Controller
 {
     public function index()
     {
-        $exams = Exam::with('candidat')->get();
+        $exams = Exam::with('condidat')->get();
         return view('exams.index', compact('exams'));
     }
 
     public function create()
     {
-        $candidates = Condidat::all();
-        return view('exams.create', compact('candidates'));
+        $condidates = Condidat::all();
+        return view('exams.create', compact('condidates'));
     }
 
     public function store(Request $request)
@@ -25,7 +25,7 @@ class ExamController extends Controller
         $request->validate([
             'type' => 'required|string',
             'exam_date' => 'required|date',
-            'candidat_id' => 'required|exists:condidats,id',
+            'condidat_id' => 'required|exists:condidats,id',
         ]);
 
         Exam::create($request->all());
@@ -41,8 +41,8 @@ class ExamController extends Controller
 
     public function edit(Exam $exam)
     {
-        $candidates = Condidat::all();
-        return view('exams.edit', compact('exam', 'candidates'));
+        $condidates = Condidat::all();
+        return view('exams.edit', compact('exam', 'condidates'));
     }
 
     public function update(Request $request, Exam $exam)
@@ -50,13 +50,13 @@ class ExamController extends Controller
         $request->validate([
             'type' => 'required|string',
             'exam_date' => 'required|date',
-            'candidat_id' => 'required|exists:condidats,id',
+            'condidat_id' => 'required|exists:condidats,id',
         ]);
 
         $exam->update([
             'type' => $request->type,
             'exam_date' => $request->exam_date,
-            'candidat_id' => $request->candidat_id,
+            'condidat_id' => $request->condidat_id,
         ]);
 
         return redirect()->route('exams.index')

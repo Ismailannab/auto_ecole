@@ -19,7 +19,7 @@ class CreatePaymentsTable extends Migration
             $table->date('date_paiement');
             $table->decimal('reste', 8, 2);
             $table->foreignId('permis_id')->constrained('permis')->onDelete('cascade');
-            $table->foreignId('candidat_id')->constrained('condidats')->onDelete('cascade');
+            $table->foreignId('condidat_id')->constrained('condidats')->onDelete('cascade');
             $table->timestamps();
         });
     }

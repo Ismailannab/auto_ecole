@@ -11,7 +11,7 @@ class PaymentController extends Controller
 {
     public function index()
     {
-        $payments = Payment::with(['candidat', 'permis'])->get();
+        $payments = Payment::with(['condidat', 'permis'])->get();
         return view('payments.index', compact('payments'));
     }
 
@@ -29,7 +29,7 @@ class PaymentController extends Controller
             'date_paiement' => 'required|date',
             'reste' => 'required|numeric',
             'permis_id' => 'required|exists:permis,id',
-            'candidat_id' => 'required|exists:condidats,id',
+            'condidat_id' => 'required|exists:condidats,id',
         ]);
 
         Payment::create($request->all());
@@ -40,7 +40,7 @@ class PaymentController extends Controller
 
     public function show(Payment $payment)
     {
-        $payment->load(['candidat', 'permis']);
+        $payment->load(['condidat', 'permis']);
         return view('payments.show', compact('payment'));
     }
 
@@ -58,7 +58,7 @@ class PaymentController extends Controller
             'date_paiement' => 'required|date',
             'reste' => 'required|numeric',
             'permis_id' => 'required|exists:permis,id',
-            'candidat_id' => 'required|exists:condidats,id',
+            'condidat_id' => 'required|exists:condidats,id',
         ]);
 
         $payment->update($request->all());

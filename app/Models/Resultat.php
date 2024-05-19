@@ -13,7 +13,7 @@ class Resultat extends Model
         'resultat', 
         'exam_id', 
         'permis_id', 
-        'candidat_id'
+        'condidat_id'
     ];
 
     public function exam()
